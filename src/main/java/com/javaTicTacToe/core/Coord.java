@@ -4,6 +4,10 @@ import java.util.Objects;
 
 public record Coord(int j, int i) {
 
+    public Coord {
+
+    }
+
     public static Coord parse(String text){
         Objects.requireNonNull(text);
 
