@@ -6,7 +6,7 @@ import java.util.Objects;
 
 import static com.javaTicTacToe.util.ValidationUtils.require;
 
-public record Coord(int j, int i) {
+public record Coord(int i, int j) {
 
     public Coord {
         require(i >= 0 && i < Board.SIZE, "I is out of range");
