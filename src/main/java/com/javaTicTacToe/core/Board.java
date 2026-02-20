@@ -47,6 +47,11 @@ public class Board {
                 first = false;
             }
             out.println();
+
+            for(int j = 0; j < SIZE; j++){
+                out.print("---");
+            }
+            out.println();
         }
 
         return sw.toString();
