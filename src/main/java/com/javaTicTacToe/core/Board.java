@@ -24,7 +24,7 @@ public class Board {
 
     }
 
-    public void update(Symbol symbol, Coord coord){
+    public Symbol update(Symbol symbol, Coord coord){
         Objects.requireNonNull(symbol);
         Objects.requireNonNull(coord);
 
@@ -36,7 +36,27 @@ public class Board {
             throw new IllegalArgumentException("Play is not possible");
         }
         matrix[coord.i()][coord.j()] = symbol;
+        return findSequence();
     }
+
+
+    private Symbol findSequence(){
+        //TODO
+        return null;
+    }
+
+    // tie game
+    public boolean isFull(){
+        for(int i = 0; i < SIZE; i++){
+            for(int j = 0; j < SIZE; j++){
+                if(matrix[i][j] == Symbol.NONE){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 
     @Override
     public String toString() {
