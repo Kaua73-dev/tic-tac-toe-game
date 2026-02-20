@@ -34,11 +34,19 @@ public class Board {
         StringWriter sw = new StringWriter();
         PrintWriter out = new PrintWriter(sw);
 
+
         for(int i = 0; i < SIZE; i++){
 
+            boolean first = true;
             for(int j = 0; j < SIZE; j++){
-                out.print(matrix[i][j] + " ");
+
+                if(!first){
+                    out.print(" | ");
+                }
+                out.print(matrix[i][j]);
+                first = false;
             }
+            out.println();
         }
 
         return sw.toString();
