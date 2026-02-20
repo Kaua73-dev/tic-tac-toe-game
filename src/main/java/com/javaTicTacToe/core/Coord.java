@@ -1,10 +1,16 @@
 package com.javaTicTacToe.core;
 
+import com.javaTicTacToe.util.ValidationUtils;
+
 import java.util.Objects;
+
+import static com.javaTicTacToe.util.ValidationUtils.require;
 
 public record Coord(int j, int i) {
 
     public Coord {
+        require(i >= 0 && i < Board.SIZE, "I is out of range");
+        require(j >= 0 && j < Board.SIZE, "J is out of range");
 
     }
 
