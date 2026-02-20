@@ -17,7 +17,7 @@ public class Board {
 
         // control of collum
            for(int j = 0; j< matrix[i].length; j++){
-            matrix[i][j] = Symbol.X;
+            matrix[i][j] = Symbol.NONE;
            }
         }
     }
@@ -39,15 +39,17 @@ public class Board {
 
             boolean first = true;
             for(int j = 0; j < SIZE; j++){
-
+                // linha vertical que separa tabuleiro
                 if(!first){
                     out.print(" | ");
                 }
+                // iteração
                 out.print(matrix[i][j]);
                 first = false;
             }
             out.println();
 
+            // linha horizontal que separa tabuleiro
             if(i + 1 < SIZE){
                 for(int j = 0; j < SIZE; j++){
                     out.print("---");
