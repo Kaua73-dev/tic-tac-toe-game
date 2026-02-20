@@ -16,16 +16,18 @@ public class Game {
             Output.write(board);
             Output.writeNewLine();
 
-            String play = Input.read("Play ->");
-            Coord coord = Coord.parse(play);
-            board.update(players.next(), coord);
-
+           play(players.next());
 
         }
 
     }
 
 
+    private void play(Symbol symbol){
+        String play = Input.read(String.format("'%s' Play ->", symbol));
+        Coord coord = Coord.parse(play);
+        board.update(symbol, coord);
+    }
 
 
 }
