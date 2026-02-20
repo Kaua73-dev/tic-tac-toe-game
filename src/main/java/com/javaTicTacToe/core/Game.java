@@ -24,10 +24,19 @@ public class Game {
 
 
     private void play(Symbol symbol){
-        String play = Input.read(String.format("'%s' Play ->", symbol));
-        Coord coord = Coord.parse(play);
-        board.update(symbol, coord);
-    }
+        while(true) {
+            try{
+                String play = Input.read(String.format("'%s' Play ->", symbol));
+                Coord coord = Coord.parse(play);
+                board.update(symbol, coord);
+                break;
+            } catch (RuntimeException e){
+                Output.write("ERROR: " + e.getMessage());
+            }
 
+        }
+
+
+    }
 
 }
