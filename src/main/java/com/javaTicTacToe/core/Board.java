@@ -48,8 +48,10 @@ public class Board {
             }
             out.println();
 
-            for(int j = 0; j < SIZE; j++){
-                out.print("---");
+            if(i + 1 < SIZE){
+                for(int j = 0; j < SIZE; j++){
+                    out.print("---");
+                }
             }
             out.println();
         }
