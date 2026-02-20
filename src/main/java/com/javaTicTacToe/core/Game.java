@@ -8,10 +8,7 @@ public class Game {
         System.out.println("Game Started!");
         System.out.println("-----------");
 
-        System.out.println(players.next());
-        System.out.println(players.next());
-        System.out.println(players.next());
-        System.out.println(players.next());
+        System.out.println(board);
 
     }
 

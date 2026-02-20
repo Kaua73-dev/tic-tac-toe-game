@@ -1,6 +1,7 @@
 package com.javaTicTacToe.core;
 
-import java.util.Arrays;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 public class Board {
 
@@ -15,8 +16,8 @@ public class Board {
         for(int i = 0; i< matrix.length; i++){
 
         // control of collum
-           for(int j = 0; j< matrix[i].length; i++){
-            matrix[i][j] = Symbol.NONE;
+           for(int j = 0; j< matrix[i].length; j++){
+            matrix[i][j] = Symbol.X;
            }
         }
     }
@@ -25,10 +26,22 @@ public class Board {
     public String toString() {
         /*
             x | x | x
+            ---------
             x | x | x
+            ---------
             x | x | x
          */
+        StringWriter sw = new StringWriter();
+        PrintWriter out = new PrintWriter(sw);
 
+        for(int i = 0; i < SIZE; i++){
+
+            for(int j = 0; j < SIZE; j++){
+                out.print(matrix[i][j] + " ");
+            }
+        }
+
+        return sw.toString();
 
     }
 }
