@@ -1,4 +1,4 @@
-package com.javaMySQL.core;
+package com.javaTicTacToe.core;
 
 public class Game {
     private final Board board = new Board();

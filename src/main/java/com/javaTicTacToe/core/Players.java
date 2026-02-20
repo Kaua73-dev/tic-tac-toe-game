@@ -1,4 +1,4 @@
-package com.javaMySQL.core;
+package com.javaTicTacToe.core;
 
 import java.util.ArrayList;
 import java.util.List;
