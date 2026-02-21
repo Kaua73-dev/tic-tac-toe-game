@@ -21,8 +21,11 @@ public class Game {
           winner = play(players.next());
 
         }
+
+        Output.write(board);
+
         if(board.isFull()){
-            Output.write("No winner");
+            Output.write("With no winner, it was a toe");
         } else {
             Output.write(String.format("'%s' is the winner!", winner));
         }
