@@ -24,12 +24,10 @@ public class Game {
 
         Output.write(board);
 
-        if(board.isFull()){
-            Output.write("With no winner, it was a toe");
-        } else {
+        if(winner != null ){
             Output.write(String.format("'%s' is the winner!", winner));
         }
-
+        Output.write("With no winner, it was a toe");
     }
 
     private Symbol play(Symbol symbol){
