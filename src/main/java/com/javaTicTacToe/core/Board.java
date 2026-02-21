@@ -52,12 +52,17 @@ public class Board {
         }
 
         symbol = findSequenceInCDiagonals();
-        if(symbol != null){
-            return symbol;
+        return symbol;
+    }
+
+    private Symbol findSequenceInRow(int i){
+        if(matrix[i][0] == matrix[i][1]
+                && matrix[i][1] == matrix[i][2]
+                && matrix[i][0] != Symbol.NONE) {
+            return matrix[i][0];
         }
-
-
         return null;
+
     }
 
     private Symbol findSequenceInRows(){
@@ -71,13 +76,13 @@ public class Board {
         return null;
     }
 
-    private Symbol findSequenceInRow(int i){
-       if(matrix[i][0] == matrix[i][1]
-               && matrix[i][1] == matrix[i][2]
-               && matrix[i][0] != Symbol.NONE) {
-                return matrix[i][0];
-       }
-       return null;
+    private Symbol findSequenceInColumn(int j){
+        if(matrix[0][j] == matrix[1][j]
+                && matrix[1][j] == matrix[2][j]
+                && matrix[0][j] != Symbol.NONE) {
+            return matrix[0][j];
+        }
+        return null;
 
     }
 
@@ -91,15 +96,6 @@ public class Board {
         return null;
     }
 
-    private Symbol findSequenceInColumn(int j){
-        if(matrix[0][j] == matrix[1][j]
-                && matrix[1][j] == matrix[2][j]
-                && matrix[0][j] != Symbol.NONE) {
-            return matrix[0][j];
-        }
-        return null;
-
-    }
 
 
 
@@ -112,8 +108,8 @@ public class Board {
 
         if(matrix[0][2] == matrix[1][1]
                 && matrix[1][1] == matrix[2][0]
-                && matrix[0][0] != Symbol.NONE) {
-            return matrix[0][0];
+                && matrix[0][2] != Symbol.NONE) {
+            return matrix[0][2];
         }
 
         return null;
